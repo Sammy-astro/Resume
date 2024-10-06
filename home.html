@@ -1,0 +1,179 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>My Portfolio</title>
+    <link rel="stylesheet" href="style.css" />
+    <script
+      type="text/javascript"
+      src="https://cdn.jsdelivr.net/npm/@emailjs/browser@4/dist/email.min.js"
+    ></script>
+    <script type="text/javascript">
+      (function () {
+        // https://dashboard.emailjs.com/admin/account
+        emailjs.init({
+          publicKey: "AKFnjuZaDsKcvG12O",
+        });
+      })();
+    </script>
+    <script type="text/javascript">
+      window.onload = function () {
+        document
+          .getElementById("contact-form")
+          .addEventListener("submit", function (event) {
+            event.preventDefault();
+            // these IDs from the previous steps
+            emailjs.sendForm("contact_service ", "contact_form", this).then(
+              () => {
+                console.log("SUCCESS!");
+              },
+              (error) => {
+                console.log("FAILED...", error);
+              }
+            );
+          });
+      };
+    </script>
+  </head>
+  <body>
+    <header class="navbar">
+      <div class="name">Sammy <span class="last-name">Sambo</span></div>
+      <nav>
+        <ul class="nav-links">
+          <li><a href="#home" class="active">Home</a></li>
+          <li><a href="#contact">Contact</a></li>
+          <li><a href="#service">Service</a></li>
+          <li><a href="#education">Education</a></li>
+        </ul>
+      </nav>
+    </header>
+    <section id="home">
+      <h1>Hi, It's <span id="sammy">Sammy</span></h1>
+      <p id="animated-text"><span class="glow-text">I'm a</span></p>
+      <div class="about-container">
+        <div class="text-content">
+          <p id="about-me">
+            <br />I am an energetic and innovative professional, passionate<br />
+            about creating impactful digital experiences. With a strong<br />
+            background in both front-end and back-end development,<br />
+            I thrive on transforming ideas into reality. My dedication to<br />
+            continuous learning and improvement drives me to stay<br />
+            updated with the latest technologies and design trends.<br />
+            I'm ready for work and excited to collaborate on projects<br />
+            that challenge my skills and inspire creativity
+          </p>
+          <div class="social-icons">
+            <a href="https://github.com/Sammy-astro" target="_blank">
+              <img src="images/git.png" alt="GitHub" class="social-icon" />
+            </a>
+            <a
+              href="https://www.linkedin.com/in/sammy-sambo-54586a316/"
+              target="_blank"
+            >
+              <img src="images/link.png" alt="LinkedIn" class="social-icon" />
+            </a>
+            <a href="https://www.instagram.com/astro5878/" target="_blank">
+              <img src="images/insta.png" alt="Instagram" class="social-icon" />
+            </a>
+          </div>
+          <div class="button-container">
+            <button class="action-button">
+              <a
+                id="re"
+                href="https://docs.google.com/document/d/1H_BafwQXM6q1eZcdcs5HSYdNRDZpSfsIP-QBR8yuOaE/"
+                >Resume</a
+              >
+            </button>
+            <a href="#contact" class="action-button">Contact</a>
+          </div>
+        </div>
+        <div class="home-image">
+          <img src="images/me.png" alt="Me" />
+        </div>
+      </div>
+    </section>
+
+    <section id="services">
+      <h1 id="serv">Services</h1>
+      <div class="service-container">
+        <div class="service-row">
+          <div class="service-block">
+            <h3>Front-End Development</h3>
+            <p>
+              I create responsive and visually appealing user interfaces using
+              HTML, CSS, and JavaScript.
+            </p>
+          </div>
+          <div class="service-block">
+            <h3>Back-End Development</h3>
+            <p>
+              I develop server-side logic, database management, and APIs to
+              power applications efficiently.
+            </p>
+          </div>
+        </div>
+        <div class="service-row">
+          <div class="service-block">
+            <h3>UI/UX Design</h3>
+            <p>
+              I design intuitive and engaging user experiences through research,
+              prototyping, and user testing.
+            </p>
+          </div>
+          <div class="service-block">
+            <h3>Web Development</h3>
+            <p>
+              I build full-fledged web applications, integrating front-end and
+              back-end technologies for a seamless experience.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+    <section id="education">
+      <h2 id="edu">My Education</h2>
+      <div class="education-container">
+        <div class="education-block left">
+          <h3>Web development</h3>
+          <p>
+            I studied various aspects of computer science, including
+            programming, algorithms, and software development.
+          </p>
+        </div>
+        <div class="education-block right">
+          <h3>Software engineering Bootcamp</h3>
+          <p>
+            Completed an intensive bootcamp focused on front-end and back-end
+            web development technologies.
+          </p>
+        </div>
+      </div>
+      <div class="button-container"></div>
+      <button class="action-button">
+        <a
+          id="cer"
+          href="https://drive.google.com/file/d/1a_Z5S10le07eYKHBKGBzZJRDFLUKvnXs/view?usp=drive_link"
+          >Certificate</a
+        >
+      </button>
+    </section>
+
+    <section id="contact">
+      <h2 id="con">Contact Me</h2>
+      <div class="contact-container">
+      <form id="contact-form">
+      <label>Name</label>
+      <input type="text" name="user_name" />
+      <label>Email</label>
+      <input type="email" name="user_email" />
+      <label>Subject</label>
+      <input type="subject" name="subject" />
+      <label>Message</label>
+      <textarea name="message"></textarea>
+      <input type="submit" value="Send" />
+    </form>
+      </div>
+    </section>
+  </body>
+</html>
