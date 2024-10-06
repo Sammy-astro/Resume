@@ -19,6 +19,7 @@ document.addEventListener("DOMContentLoaded", function () {
     function typing() {
       if (i < text.length) {
         animatedText.textContent += text.charAt(i);
+
         i++;
         setTimeout(typing, 100); // Adjust typing speed here
       } else {
@@ -81,4 +82,3 @@ function sendMail() {
     .send("contact_service ", "contact_form", parms)
     .then(alert("Email Sent !!"));
 }
-
